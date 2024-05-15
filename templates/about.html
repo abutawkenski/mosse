@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="hero-wrap hero-wrap-2">
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+            <div class="col-md-9 text-center ftco-animate pt-5">
+                <h1 class="mb-3 bread">About</h1>
+                <p class="breadcrumbs"><span class="mr-2"><a href="index-2.html">Home <i
+                        class="fa fa-chevron-right"></i></a></span> <span>About <i
+                        class="fa fa-chevron-right"></i></span></p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="hero-wrap py-md-4">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters justify-content-center slider-text align-items-center" data-scrollax-parent="true">
+
+            <div class="col-md-10 ftco-animate py-5">
+                <div class="row pb-md-5">
+                    {% for i in about %}
+                    <div class="col-md-4">
+                        <div class="author">
+                            <div class="img" style="background-image: url({{i.image.url}});"></div>
+                            <div class="text">
+                                <h3>{{i.name}}</h3>
+                                <p>{{i.description}}</p>
+                                <ul class="ftco-footer-social list-unstyled mt-2">
+                                    <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
+                                    <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
+                                    <li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 author-details">
+                        <h2>{{i.title}}</h2>
+                        <p>{{i.body}}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section class="ftco-intro ftco-section bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                <h2>Subscribe to our Newsletter</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-5">
+                        <form action="#" class="subscribe-form">
+                            <div class="form-group d-flex">
+                                <input type="text" class="form-control" placeholder="Enter email address">
+                                <input type="submit" value="Subscribe" class="submit px-3">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+{% endblock %}
